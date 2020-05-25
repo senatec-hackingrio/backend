@@ -25,27 +25,17 @@ public class UsuarioLogadoResponse {
 	public final class UsuarioResponse {
 		
 		private Long id;
-		private String login;
 		private String nome;
-		private String email;
-		private String dataUltimoLogin;
 		
 		public  UsuarioResponse (Object principal) 
 		{
 			Usuario user = (Usuario) principal;
 			id = user.getId();
-			login = user.getLogin();
-			nome = user.getNome();
-			email = user.getEmail();
-		
+			nome = user.getNomeCompleto();
 		}
 			
-		
 		public Long getId() {return id;}
-		public String getLogin() {return login;}
 		public String getNome() {return nome;}
-		public String getEmail() {return email;}
-		public String getDataUltimoLogin() {return dataUltimoLogin;}
 		
 	}
 

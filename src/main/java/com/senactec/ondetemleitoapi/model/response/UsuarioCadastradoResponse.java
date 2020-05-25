@@ -31,24 +31,24 @@ public class UsuarioCadastradoResponse {
 	public void setPerfil(String perfil) {this.perfil = perfil;	}
 
 	public UsuarioCadastradoResponse() { }
+//	
+//	public UsuarioCadastradoResponse(Usuario usuario) {
+//		this.id = usuario.getId();
+//		this.nome = usuario.getNome();
+//		this.email = usuario.getEmail();
+//		this.login = usuario.getLogin();
+//		this.perfil = usuario.getPerfil().getNome();
+//				
+//	}
 	
-	public UsuarioCadastradoResponse(Usuario usuario) {
-		this.id = usuario.getId();
-		this.nome = usuario.getNome();
-		this.email = usuario.getEmail();
-		this.login = usuario.getLogin();
-		this.perfil = usuario.getPerfil().getNome();
-				
-	}
 	
-	
-	public static List<UsuarioCadastradoResponse> converte(List<Usuario> usuarios) {
-		
-		return usuarios.stream()
-				.map(UsuarioCadastradoResponse::new)
-				.collect(Collectors.toList());
-		
-	}
+//	public static List<UsuarioCadastradoResponse> converte(List<Usuario> usuarios) {
+//		
+//		return usuarios.stream()
+//				.map(UsuarioCadastradoResponse::new)
+//				.collect(Collectors.toList());
+//		
+//	}
 	
 	
 

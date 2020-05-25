@@ -23,7 +23,7 @@ public class AutenticacaoService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		
-		Optional<Usuario> usuario = usuarioRepository.findByLogin(username);
+		Optional<Usuario> usuario = usuarioRepository.findByCpf(username);
 		if(usuario.isPresent()) {
 			return usuario.get();
 		}

@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OndetemleitoApiApplication {
+public class ApplicationInit {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OndetemleitoApiApplication.class, args);
+		SpringApplication.run(ApplicationInit.class, args);
 	}
 
 }

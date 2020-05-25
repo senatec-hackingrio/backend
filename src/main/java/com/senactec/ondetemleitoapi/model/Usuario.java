@@ -30,36 +30,19 @@ public class Usuario implements UserDetails {
 	// --------------------
 	@Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
-	
-	private String email;
-	
-	
-	private String login;
-	
-	
-	private String senha;
+    private String nomeCompleto;
+    
+    @Column(unique=true)
+    private String cpf;
+    
+    private String senhaAcesso;
+    private String email;
+    private String telefone;
+    private String endereco;
+    private String complemento;
+    private String cep;
 
-	@Column(name = "data_ultimo_login")
-	private LocalDateTime dataUltimoLogin;
 
-	
-	// --------------------
-	// DADOS RESET DE SENHA
-	// --------------------
-	@Column(name = "reset_senha", columnDefinition = "boolean default false")
-	private boolean resetSenha;
-	
-	@Column(name = "reset_senha_uuid")
-	private String resetSenhaUuid;
-	
-	@Column(name = "reset_senha_envio_email")
-	private LocalDateTime resetSenhaDataEnvioEmail;
-	
-	@Column(name = "reset_senha_data_limite")
-	private LocalDateTime resetSenhaDataLimite;
-	
-	
 	// ----------------------
 	// DADOS spring security
 	// ----------------------
@@ -71,39 +54,36 @@ public class Usuario implements UserDetails {
 	private Perfil perfil;
 
 	
-	
-	
-	
 	public Long getId() {return id;	}
 	public void setId(Long id) {this.id = id;	}
 
-	public String getNome() {return nome;	}
-	public void setNome(String nome) {this.nome = nome;	}
 
+	public String getNomeCompleto() {return nomeCompleto;	}
+	public void setNomeCompleto(String nomeCompleto) {this.nomeCompleto = nomeCompleto;	}
+	
+	public String getCpf() {return cpf;	}
+	public void setCpf(String cpf) {this.cpf = cpf;	}
+	
+	public String getSenhaAcesso() {return senhaAcesso;	}
+	public void setSenhaAcesso(String senhaAcesso) {this.senhaAcesso = senhaAcesso;	}
+	
 	public String getEmail() {return email;	}
 	public void setEmail(String email) {this.email = email;	}
-
-	public String getLogin() {return login;	}
-	public void setLogin(String login) {this.login = login;	}
-
-	public String getSenha() {return senha;	}
-	public void setSenha(String senha) {this.senha = senha;	}
-
-	public LocalDateTime getDataUltimoLogin() {	return dataUltimoLogin;	}
-	public void setDataUltimoLogin(LocalDateTime dataUltimoLogin) {	this.dataUltimoLogin = dataUltimoLogin;	}
-
-	public boolean isResetSenha() { return resetSenha;}
-	public void setResetSenha(boolean resetSenha) {	this.resetSenha = resetSenha;	}
-
-	public String getResetSenhaUuid() {	return resetSenhaUuid;	}
-	public void setResetSenhaUuid(String resetSenhaUuid) {	this.resetSenhaUuid = resetSenhaUuid;	}
-
-	public LocalDateTime getResetSenhaDataEnvioEmail() {return resetSenhaDataEnvioEmail;	}
-	public void setResetSenhaDataEnvioEmail(LocalDateTime resetSenhaDataEnvioEmail) {this.resetSenhaDataEnvioEmail = resetSenhaDataEnvioEmail;	}
-
-	public LocalDateTime getResetSenhaDataLimite() {return resetSenhaDataLimite;	}
-	public void setResetSenhaDataLimite(LocalDateTime resetSenhaDataLimite) {this.resetSenhaDataLimite = resetSenhaDataLimite;	}
-
+	
+	public String getTelefone() {return telefone;	}
+	public void setTelefone(String telefone) {this.telefone = telefone;	}
+	
+	public String getEndereco() {return endereco;}
+	public void setEndereco(String endereco) {this.endereco = endereco;	}
+	
+	public String getComplemento() {return complemento;	}
+	public void setComplemento(String complemento) {this.complemento = complemento;	}
+	
+	public String getCep() {return cep;	}
+	public void setCep(String cep) {this.cep = cep;	}
+	
+	public void setEnabled(boolean enabled) {	this.enabled = enabled;	}
+	
 	public Perfil getPerfil() {	return perfil;	}
 	public void setPerfil(Perfil perfil) {	this.perfil = perfil;	}
 
@@ -125,10 +105,10 @@ public class Usuario implements UserDetails {
 
 	
 	@Override
-	public String getPassword() {return this.senha;	}
+	public String getPassword() {return this.senhaAcesso;	}
 
 	@Override
-	public String getUsername() {return this.login;	}
+	public String getUsername() {return this.cpf;	}
 
 	@Override
 	public boolean isAccountNonExpired() {return true;	}

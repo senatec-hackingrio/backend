@@ -29,19 +29,19 @@ public class NovoUsuarioCadastradoResponse {
 
 
 
-	public NovoUsuarioCadastradoResponse converte(Usuario usuario) {
-		
-		NovoUsuarioCadastradoResponse usuarioResponse = new NovoUsuarioCadastradoResponse();
-		usuarioResponse.id = usuario.getId();
-		usuarioResponse.nome = usuario.getNome();
-		usuarioResponse.login = usuario.getLogin();
-		usuarioResponse.email = usuario.getEmail();
-		
-		usuarioResponse.perfil = new Perfil();
-		usuarioResponse.perfil.setId(usuario.getPerfil().getId());
-		usuarioResponse.perfil.setNome(usuario.getPerfil().getNome());
-		
-		return usuarioResponse;
-	}
+//	public NovoUsuarioCadastradoResponse converte(Usuario usuario) {
+//		
+//		NovoUsuarioCadastradoResponse usuarioResponse = new NovoUsuarioCadastradoResponse();
+//		usuarioResponse.id = usuario.getId();
+//		usuarioResponse.nome = usuario.getNome();
+//		usuarioResponse.login = usuario.getLogin();
+//		usuarioResponse.email = usuario.getEmail();
+//		
+//		usuarioResponse.perfil = new Perfil();
+//		usuarioResponse.perfil.setId(usuario.getPerfil().getId());
+//		usuarioResponse.perfil.setNome(usuario.getPerfil().getNome());
+//		
+//		return usuarioResponse;
+//	}
 
 }
